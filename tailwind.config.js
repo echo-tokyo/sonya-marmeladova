@@ -6,9 +6,6 @@ export default {
   ],
   theme: {
     colors: {
-      black,
-      transparent,
-      white,
       'dark-purple': '#34274D',
       'primary': '#FF4876',
       'light-yellow': '#FFE9D0',
@@ -23,3 +20,4 @@ export default {
   },
   plugins: [],
 }
+
