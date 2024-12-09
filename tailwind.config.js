@@ -18,7 +18,7 @@ export default {
       sm: '0.8rem',
       base: '1.2rem',
       xl: '1.6rem',
-      large: '6rem'
+      large: '4.4rem'
     }
   },
   plugins: [],
