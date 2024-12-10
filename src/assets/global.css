@@ -14,10 +14,10 @@ h1{
 h2{
   font-size: 3rem;
   font-weight: 900;
-  color: #FF4876;
 }
 h3{
   font-size: 1.6rem;
+  font-weight: bold;
 }
 p{
   font-size: 1.2rem;
@@ -25,5 +25,5 @@ p{
 }
 
 :root {
-  background-color: #242424;
+  background-color: #FFE9D0
 }
