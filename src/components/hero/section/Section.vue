@@ -7,7 +7,7 @@ import ButtonT from '../../ui/Button-T.vue';
 	<section class='flex items-center justify-between mt-16'>
 		<div class="flex flex-col gap-10">
 			<div>
-				<h1 class='font-black text-light-yellow'>Web design & <br> development</h1>
+				<h1 class='font-black text-light-yellow test'>Web design & <br> development</h1>
 				<p class='mt-4 text-light-purple'>WHooooaao yoooo wazzup dude i can design or <br> develop your site cuz im so cool IT man</p>
 			</div>
 			<div class="flex gap-10">
@@ -20,7 +20,7 @@ import ButtonT from '../../ui/Button-T.vue';
 </template>
 
 <style scoped>
-  .img{
-		width: 45%;
-  }
+	.img{
+		width: 35%;
+	}
 </style>

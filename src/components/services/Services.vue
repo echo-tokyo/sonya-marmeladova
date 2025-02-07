@@ -1,5 +1,5 @@
 <template>
-	<div class="flex items-center justify-between services px-14 py-20">
+	<div class="flex items-center justify-between px-14 py-20">
 		<img class='img2' src="../../../public/retro-computer-desk-arrangement-Photoroom 1.png" alt="">
 		<div class="">
 			<h1 class='text-dark-purple font-black'>Services</h1>
@@ -44,4 +44,7 @@
 	.img2{
 		width: 45%;
 	}
+	/* .services{
+		position: f;
+	} */
 </style>
