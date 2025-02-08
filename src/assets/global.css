@@ -6,6 +6,8 @@ body, html{
   height: 100%;
   /* overflow: hidden; */
   font-family: "Montserrat", serif;
+  cursor: default;
+  user-select: none;
 }
 
 h1{

@@ -1,6 +1,10 @@
 <script setup>
-import ButtonP from '../../ui/Button-P.vue';
-import ButtonT from '../../ui/Button-T.vue';
+import CustomBtn from '../../ui/CustomBtn.vue'
+
+const handleButtonClick = () => {
+	alert('В разработке')
+}
+
 </script>
 
 <template>
@@ -11,8 +15,8 @@ import ButtonT from '../../ui/Button-T.vue';
 				<p class='mt-4 text-light-purple'>WHooooaao yoooo wazzup dude i can design or <br> develop your site cuz im so cool IT man</p>
 			</div>
 			<div class="flex gap-10">
-				<ButtonP />
-				<ButtonT />
+				<CustomBtn textContent='Button' clr='pink' @click="handleButtonClick(e)"/>
+				<CustomBtn textContent='Button' clr='transparent' @click="handleButtonClick(e)"/>
 			</div>
 		</div>
 		<img src="../../../../public/digital_artist_male-Photoroom 1.png" alt="" class='img'>

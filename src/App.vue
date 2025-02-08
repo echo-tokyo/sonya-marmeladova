@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUnmount, ref } from 'vue'
+import { onBeforeUnmount, onBeforeMount, ref } from 'vue'
 import Hero from './components/hero/Hero.vue'
 import Services from './components/services/Services.vue'
 
@@ -8,6 +8,7 @@ const services = ref(null)
 let targetVal = 0
 let currentVal = 0
 let isAnimating = false
+const isInitialized = ref(false)
 
 const handleWheel = (event) => {
   if (window.scrollY === 0) {
@@ -39,38 +40,68 @@ const animate = () => {
   }
 }
 
+const initialize = async () => {
+  console.log('Инициализация перед загрузкой страницы')
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  isInitialized.value = true;
+}
+
 document.addEventListener('wheel', handleWheel, { passive: false })
 
+onBeforeMount(() => {
+  initialize()
+})
+
 onBeforeUnmount(() => {
+  window.scrollTo(0,0)
+  console.log('lol')
   document.removeEventListener('wheel', handleWheel)
 })
 </script>
 
 <template>
-  <div ref="hero" class="hero">
+  <div class="mask" v-if='!isInitialized'><div class="loader"></div></div>
+  <div ref="hero" class="hero" v-if="isInitialized">
     <Hero />
   </div>
-  <div ref="services" class="services">
+  <div ref="services" class="services" v-if="isInitialized">
     <Services />
-  </div>
-  <div class="lol">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam autem
-    incidunt eius neque ratione. Voluptatum harum, autem ducimus necessitatibus
-    possimus nemo optio ut maxime, similique ipsum inventore ipsam doloribus
-    dicta!
   </div>
 </template>
 
 <style scoped>
-.lol {
-  height: 100vh;
+.mask{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: #34274d;
+	top: 0;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
 }
+.loader{
+	width: 75px;
+	height: 75px;
+	border: 6px solid #a371ff;
+	border-left-color: 	#4e3975;
+	border-radius: 50%;
+	animation: loader 1s linear infinite;
+}
+@keyframes loader {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 .hero {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .services {
   position: absolute;
   bottom: 0;
+  z-index: 1;
 }
 </style>

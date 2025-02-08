@@ -13,6 +13,7 @@ export default {
       'primary': '#FF4876',
       'light-yellow': '#FFE9D0',
       'light-purple': '#8C7EA6',
+      'btn-disabled': '#53476c',
       stats: {
         '2yel': '#FFEFDD',
         '3yel': '#FFF3E5'
